@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Audio
 from . import wav_change_model
+from . import stt_model
 import os
 
 def index(request):
@@ -14,7 +15,10 @@ def changeAudio(request): # 주파수 변환
     wav_change_model.wave_change('success.mp3', 0.6, 25.08, os.path.join(current_directory,'media','origin'),os.path.join(current_directory,'media','change'))
     return render(request, 'audio.html')
 
-
+def stt(request): # stt
+    current_directory = os.path.dirname(os.path.abspath(__file__)) # 현재 경로
+    stt_model.STT(os.path.join(current_directory,'media','origin','success.mp3'), os.path.join(current_directory,'media','text','success.txt'))
+    return render(request, 'audio.html')
 
 # def test(request):
 #     wav_change_model('test', 0.6, 25.08, '.', '.')

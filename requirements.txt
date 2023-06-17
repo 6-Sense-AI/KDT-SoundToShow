@@ -11,3 +11,4 @@ numpy==1.21.6
 seaborn==0.12.2
 django==3.2.19
 mysqlclient==2.1.1
+openai==0.27.8
