@@ -16,4 +16,4 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-SECRET_KEY = "django-insecure-jde7jo-vyp3^r4-rh!5d7qpa6b^j=6gvluek#uu8$7cvu7_@(-"
+SECRET_KEY = ""

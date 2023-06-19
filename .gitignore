@@ -1,4 +1,4 @@
-S2S/mysite/my_settings.py
+S2S/mysite/mysite/my_settings.py
 node_modules/
 ### Django ###
 *.log
@@ -197,3 +197,4 @@ cython_debug/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+S2S/mysite/my_settings.py
