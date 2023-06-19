@@ -4,7 +4,13 @@
 {% block content %}
 <section class="app">
     <div class="container p-5 d-flex justify-content-center">
-        모드 선택하고, 파일 업로드하는 화면
-    </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="file">
+            <button type="submit">업로드</button>
+        </form>
+        {% if message %}
+        <p>{{ message }}</p>
+{% endif %}
 </section>
 {% endblock %}

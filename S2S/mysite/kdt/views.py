@@ -6,6 +6,7 @@ import os
 from django.http import HttpResponse ,JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views import View
+current_directory = os.path.dirname(os.path.abspath(__file__))
 
 def index(request):
     audio = Audio.objects.all()
@@ -21,15 +22,20 @@ def changeAudio(request): # 주파수 변환
     wav_change_model.wave_change('success.mp3', 0.6, 25.08, os.path.join(current_directory,'media','origin'),os.path.join(current_directory,'media','change'))
     return render(request, 'audio.html')
 
+# 파일 업로드
+@csrf_exempt
 def upload_file(request):
     if request.method == 'POST':
+        print('$$')
         uploaded_file = request.FILES['file']
-        fs = FileSystemStorage()
+        fs = FileSystemStorage(os.path.join(current_directory,'media','test'))
         fs.save(uploaded_file.name, uploaded_file)
-        return render(request, 'upload.html', {
-            'message': '파일이 성공적으로 업로드되었습니다.'
-        })
-    return render(request, 'upload.html')
+        message = '파일이 성공적으로 업로드되었습니다.'
+        return render(request, 'upload_file.html', {'message': message})
+    return render(request, 'upload_file.html')
+
+
+
 @csrf_exempt
 def post(request):
     current_directory = os.path.dirname(os.path.abspath(__file__)) # 현재 경로
@@ -45,47 +51,6 @@ def post(request):
     else:
         return JsonResponse({'error': '파일을 찾을 수 없습니다.'}, status=400)
 
-@csrf_exempt
-def videoUpload(request):
-    if request.method == 'POST' and request.FILES['video']:
-        uploadFile = request.FILES['video']
-        current = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        folder_path = os.path.join(current, 'media/')
-        os.makedirs(folder_path, exist_ok=True) # 폴더 생성
-
-        file_path = os.path.join(folder_path, str(uploadFile)) # uploadFile => title
-        with open(file_path, 'wb') as destination:
-            for chunk in uploadFile.chunks():
-                destination.write(chunk)
-        return HttpResponse('hello world')
-
-# @csrf_exempt
-# def videoUpload(request):
-#     if request.method == 'POST' and request.FILES.get('file'):
-#         file = request.FILES['file']
-#         print(file)
-#         id = request.POST['userId']
-#         video_title = request.POST['videoTitle']
-#         video_address = request.POST['videoAddress']
-#         upload_date = request.POST['uploadDate']
-
-#         try: # db저장
-#             user = User.objects.get(id=user_id)
-#             video = Video(
-#                 id=user,
-#                 video_title=video_title,
-#                 video_addr=video_address,
-#                 upload_date=upload_date
-#             )
-#             video.save()
-#             return JsonResponse({'message': 'File uploaded successfully.'})
-#         except User.DoesNotExist:
-#             return JsonResponse({'message': 'User does not exist.'})
-#         except Exception as e:
-#             return JsonResponse({'message': 'Error occurred while uploading file.'})
-
-#     else:
-#         return JsonResponse({'message': 'File upload failed.'})
 
 # def test(request):
 #     wav_change_model('test', 0.6, 25.08, '.', '.')
