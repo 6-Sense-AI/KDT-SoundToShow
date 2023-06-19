@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('audio', views.changeAudio, name='audio'),
+    path('upload', views.videoUpload, name='upload'),
 ]
