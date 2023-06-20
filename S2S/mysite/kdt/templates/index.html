@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-<section class="app">
+<section class="app main-page">
     <div class="container p-5">
 
         <div class="text-center">
             <a href="{% url 'kdt:uploadfile' %}"
-            class="btn btn-outline-secondary">
+            class="btn btn-lg btn-secondary">
                 Get Started!
             </a>
         </div>
@@ -15,18 +15,23 @@
         <!-- 설명 Start -->
         <div class="main-detail my-5 p-4">
     
-            <div class="mb-3 d-flex justify-content-center">
-                <pre>
-                    본 프로젝트는 경증 청각장애인에게 변환된 음성과 입모양 시각화 영상 및 텍스트를 제공하여, 
-                    학업 성취도 및 사회 참여 기회를 증진시키기 위한 서비스
-                </pre>
+            <div class="mb-5">
+                <div class="content-bold">
+                    본 프로젝트는 경증 청각장애인에게 <span class="text-danger">변환된 음성</span>과 <span class="text-danger">입모양 시각화 영상 및 텍스트</span>를 제공하여,<br>
+                    학업 성취도 및 사회 참여 기회를 증진시키기 위한 서비스입니다.
+                </div>
             </div>
-            <div class="d-flex justify-content-center">
-                <a href="https://hi098123.tistory.com/295" target="_blank"
-                class="btn btn-outline-info">
-                    가청 주파수 확인
-                </a>
-            </div>
+
+            <h5 class="">
+                음원을 업로드하면, 변환된 음원 또는 영상을 제공해드립니다.
+            </h5>
+            <h5 class="my-3">
+                먼저, 본인의 가청주파수를 알아보기 위해 다음 버튼을 클릭해주세요!
+            </h5>
+
+            <a href="https://hi098123.tistory.com/295" target="_blank" class="btn btn-outline-info align-self-start my-2">
+                가청 주파수 확인
+            </a>
             
         </div>
         <br>
@@ -35,30 +40,64 @@
         <div class="d-flex justify-content-center my-5">
 
             <div class="main-img-01 mx-3 p-5">
-                <div class="d-flex justify-content-center">
+
+                <h1 class="content-bold d-flex justify-content-center mt-4">
+                    Step 1
+                </h1>
+                <h4 class="d-flex justify-content-center mt-4">
+                    주파수 모드 설정
+                </h4>
+
+                <div class="d-flex justify-content-center my-5">
                     <img class="img-fluid" src="{% static 'img/tmp1.png' %}" alt="frequency">
                 </div>
-                <h3 class="d-flex justify-content-center mt-4">
-                    모드 1 (주파수)
-                </h3>
+
+                <p class="text-center mt-4">
+                    네가지의 변환 음원과 원본 음원을<br>
+                    선택할 수 있습니다.
+                </p>
+
             </div>
     
             <div class="main-img-01 mx-3 p-5">
-                <div class="d-flex justify-content-center">
+                
+                <h1 class="content-bold d-flex justify-content-center mt-4">
+                    Step 2
+                </h1>
+                <h4 class="d-flex justify-content-center mt-4">
+                    입모양 시각화 여부 설정
+                </h4>
+
+                <div class="d-flex justify-content-center my-5">
                     <img class="img-fluid" src="{% static 'img/tmp2.png' %}" alt="lip">
                 </div>
-                <h3 class="d-flex justify-content-center mt-4">
-                    모드 2 (입모양)
-                </h3>
+
+                <p class="text-center mt-4">
+                    음원의 입모양을 시각화한 얼굴 영상을<br>
+                    제공합니다.<br>
+                    시각화 여부를 선택할 수 있습니다.
+                </p>
+
             </div>
     
             <div class="main-img-01 mx-3 p-5">
-                <div class="d-flex justify-content-center">
+
+                <h1 class="content-bold d-flex justify-content-center mt-4">
+                    Step 3
+                </h1>
+                <h4 class="d-flex justify-content-center mt-4">
+                    텍스트 시각화 여부 설정
+                </h4>
+
+                <div class="d-flex justify-content-center my-5">
                     <img class="img-fluid" src="{% static 'img/tmp4.png' %}" alt="text">
                 </div>
-                <h3 class="d-flex justify-content-center mt-4">
-                    모드 3 (텍스트)
-                </h3>
+
+                <p class="text-center mt-4">
+                    음원의 텍스트를 추출하여 제공합니다.<br>
+                    시각화 여부를 선택할 수 있습니다.
+                </p>
+
             </div>
     
         </div>

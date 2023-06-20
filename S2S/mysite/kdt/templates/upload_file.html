@@ -2,55 +2,89 @@
 {% load static %}
 
 {% block content %}
-<section class="app">
-    <div class="container p-5 d-flex justify-content-center">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="file" name="file">
-            <button type="submit">업로드</button>
-        </form>
-        <!-- 주파수 -->
-        <fieldset>
-            <legend>주파수</legend>
-            <p>
-                <label for="frequency">
-                    <select name="num" , id="num">
-                        <option value="" selected disabled>-- 선택 --</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </label>
-            <p>
-        </fieldset>
-        <!-- 입모양 생성 여부 -->
-        <fieldset>
-            <legend>입모양 생성 여부를 선택해주세요</legend>
-            <label>
-                <input type="radio" name="generate_mouth" value="yes">
-                생성
-            </label><br>
-            <label>
-                <input type="radio" name="generate_mouth" value="no">
-                생성하지 않음
-            </label><br>
-        </fieldset>
-        <!--텍스트 생성 여부 -->
-        <fieldset>
-            <legend>텍스트 생성 여부를 선택해주세요</legend>
-            <label>
-                <input type="radio" name="generate_text" value="yes">
-                생성
-            </label><br>
-            <label>
-                <input type="radio" name="generate_text" value="no">
-                생성하지 않음
-            </label><br>
-        </fieldset>
-        <!-- {% if message %}
-        <p>{{ message }}</p> -->
-        {% endif %}
+<section class="app upload-page">
+    <div class="container py-3">
+
+        <div class="row my-5 d-flex justify-content-center">
+
+            <!-- 주파수 모드 선택 -->
+            <!-- 주파수 모드 종류 
+                저주파 1 : 20~1000
+                저주파 2 : 20~2000
+                중음역 3 : 500~3000
+                고주파 4 : 1000~20000
+                고주파 5 : 2000~20000
+            -->
+            <div class="col-lg-3 main-detail mx-3 p-5">
+
+                <legend class="content-bold">주파수 모드 선택</legend>
+
+                <fieldset class="d-flex justify-content-center">
+                    <p>
+                        <label for="frequency">
+                            <select name = "num", id="num" class="text-center">
+                                <option value="" selected disabled>----- 선택 -----</option>
+                                <option value="1">저주파 1</option>
+                                <option value="2">저주파 2</option>
+                                <option value="3">원본</option>
+                                <option value="4">고주파 1</option>
+                                <option value="5">고주파 2</option>
+                            </select>
+                        </label>
+                    <p>
+                </fieldset>
+            </div>
+
+            <!-- 입모양 생성 여부 -->
+            <div class="col-lg-3 main-detail mx-3 p-5">
+
+                <legend class="content-bold">입모양 생성 여부 선택</legend>
+
+                <fieldset class="d-flex justify-content-between p-4">
+                    <label>
+                        <input type="radio" name="generate_mouth" value="yes"> 생성 
+                    </label>
+                    <label>
+                        <input type="radio" name="generate_mouth" value="no"> 생성하지 않음
+                    </label>
+                </fieldset>
+            </div>
+
+            <!--텍스트 생성 여부 -->
+            <div class="col-lg-3 main-detail mx-3 p-5">
+
+                <legend class="content-bold">텍스트 생성 여부 선택</legend>
+
+                <fieldset class="d-flex justify-content-between p-4">
+                    <label>
+                        <input type="radio" name="generate_text" value="yes"> 생성
+                    </label>
+                    <label>
+                        <input type="radio" name="generate_text" value="no"> 생성하지 않음
+                    </label>
+                </fieldset>
+            </div>
+
+        </div>
+
+        <div class="d-flex justify-content-center p-5">
+            <div>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="file" name="file" class="form-control">
+                        <button type="submit" class="btn btn-outline-dark">업로드</button> 
+                    </div>
+                    
+                </form>
+                
+                <div class="text-center">
+                    {% if message %}
+                        <p class="text-primary">{{ message }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
 </section>
 {% endblock %}
