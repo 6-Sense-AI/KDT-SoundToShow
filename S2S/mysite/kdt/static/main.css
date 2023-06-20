@@ -54,7 +54,7 @@ label, a, li, p, div, pre, div, .form-select{
 /*--------------------------------------------------------------
 # 메인화면 (index.html)
 --------------------------------------------------------------*/
-.main-detail div {
+.main-page .main-detail div {
   font-size: 25px;
 }
 
@@ -123,3 +123,6 @@ label, a, li, p, div, pre, div, .form-select{
 /*--------------------------------------------------------------
 # 모드 선택 및 파일 업로드 화면 (upload_file.html)
 --------------------------------------------------------------*/
+.upload-page .main-detail fieldset {
+  padding-top: 30px;
+}
