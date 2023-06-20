@@ -7,8 +7,8 @@
     {% csrf_token %}
 <section class="app upload-page">
     <div class="container py-3">
-        
-        <div class="portfolio-info row my-5 d-flex justify-content-center">
+
+        <div class="portfolio-info row mt-5 mb-3 d-flex justify-content-center">
 
             <!-- 주파수 모드 선택 -->
             <!-- 주파수 모드 종류 
@@ -50,12 +50,12 @@
 
                 <fieldset class="d-flex justify-content-between p-2">
                     <label>
-                        <input type="radio" name="generate_mouth" value="yes"> 생성 O
-                        <img src={% static 'img/입모양.png' %} style="width:80px; height:auto;" class="mt-2">
+                        <input type="radio" name="generate_mouth" value="yes"> 생성함
+                        <img src={% static 'img/입모양.png' %} style="width:85px; height:auto;" class="mt-2">
                     </label>
                     <label>
-                        <input type="radio" name="generate_mouth" value="no"> 생성 X
-                        <img src={% static 'img/입모양X.png' %} style="width:80px; height:auto;" class="mt-2">
+                        <input type="radio" name="generate_mouth" value="no"> 생성 안함
+                        <img src={% static 'img/입모양X.png' %} style="width:85px; height:auto;" class="mt-2">
                     </label>
                 </fieldset>
             </div>
@@ -67,12 +67,12 @@
 
                 <fieldset class="d-flex justify-content-between p-2">
                     <label>
-                        <input type="radio" name="generate_text" value="yes"> 생성 O
-                        <img src={% static 'img/텍스트.png' %} style="width:80px; height:auto;" class="mt-2">
+                        <input type="radio" name="generate_text" value="yes"> 생성함 
+                        <img src={% static 'img/텍스트.png' %} style="width:85px; height:auto;" class="mt-2">
                     </label>
                     <label>
-                        <input type="radio" name="generate_text" value="no"> 생성 X
-                        <img src={% static 'img/입모양X.png' %} style="width:80px; height:auto;" class="mt-2">
+                        <input type="radio" name="generate_text" value="no"> 생성 안함
+                        <img src={% static 'img/입모양X.png' %} style="width:85px; height:auto;" class="mt-2">
                     </label>
                 </fieldset>
             </div>
@@ -85,7 +85,7 @@
                     <input type="file" name="file" class="form-control">
                     <button type="submit" class="btn btn-outline-dark">업로드</button>
                 </div>
-                <div class="text-center">
+                <div class="text-center my-3">
                     {% if message %}
                         <p class="text-primary">{{ message }}</p>
                     {% endif %}
