@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* font-family: KCC-Ganpan; */
+
+@font-face {
+  font-family: KCC-Ganpan;
+  src: url('font/KCC-Ganpan.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6,
+label, a, li, p, div, pre, div, .form-select, .btn {
+  font-family: KCC-Ganpan;
+}
+
+.main-detail pre {
+  font-size: 20px;
+}
+
+.app{
+  background-color: #E9ECF4;
+  }
+
+.main-text{
+  font-size: medium;
+  position: relative;
+  overflow: hidden;
+  animation: main-text 7s ease-in-out;
+}
+
+.main-text-01 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 117px;
+  /* identical to box height */
+  text-align: center;
+  color: #AFB3C2;
+  text-shadow: 1px 1px 1px #FFFFFF;  
+
+}
+
+.main-text-02 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 59px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #BABECC;
+
+  text-shadow: 1px 1px 1px #FFFFFF;
+
+}
+
+.main-detail {
+  text-align: center;
+  border-radius: 20px;
+  background: #EBECF0;
+  box-shadow:  20px 20px 60px #cacbce,
+              -20px -20px 60px #ffffff;
+}
+
+.main-img-01{
+  width: 400px;
+  border-radius: 50px;
+  background: #EBECF0;
+  box-shadow:  26px 26px 52px #cacbce,
+              -26px -26px 52px #ffffff;
+}

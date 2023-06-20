@@ -1,12 +1,68 @@
-<table class="table-contents" style="padding: 10px">
-  <tr>
-    <th>제목</th>
-    <th>내용</th>
-  </tr>
-  {% for adio in audio %}
-  <tr>
-    <td>{{adio.id}}</td>
-    <td>{{adio.path}}</td>
-  </tr>
-  {%endfor%}
-</table>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="app">
+    <div class="container p-5">
+
+        <div class="text-center">
+            <a href="{% url 'kdt:uploadfile' %}"
+            class="btn btn-outline-secondary">
+                Get Started!
+            </a>
+        </div>
+
+        <!-- 설명 Start -->
+        <div class="main-detail my-5 p-4">
+    
+            <div class="mb-3 d-flex justify-content-center">
+                <pre>
+                    본 프로젝트는 경증 청각장애인에게 변환된 음성과 입모양 시각화 영상 및 텍스트를 제공하여, 
+                    학업 성취도 및 사회 참여 기회를 증진시키기 위한 서비스
+                </pre>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="https://hi098123.tistory.com/295" target="_blank"
+                class="btn btn-outline-info">
+                    가청 주파수 확인
+                </a>
+            </div>
+            
+        </div>
+        <br>
+        <!-- 설명 End -->
+
+        <div class="d-flex justify-content-center my-5">
+
+            <div class="main-img-01 mx-3 p-5">
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid" src="{% static 'img/tmp1.png' %}" alt="frequency">
+                </div>
+                <h3 class="d-flex justify-content-center mt-4">
+                    모드 1 (주파수)
+                </h3>
+            </div>
+    
+            <div class="main-img-01 mx-3 p-5">
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid" src="{% static 'img/tmp2.png' %}" alt="lip">
+                </div>
+                <h3 class="d-flex justify-content-center mt-4">
+                    모드 2 (입모양)
+                </h3>
+            </div>
+    
+            <div class="main-img-01 mx-3 p-5">
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid" src="{% static 'img/tmp4.png' %}" alt="text">
+                </div>
+                <h3 class="d-flex justify-content-center mt-4">
+                    모드 3 (텍스트)
+                </h3>
+            </div>
+    
+        </div>
+
+    </div>
+</section>
+{% endblock %}
