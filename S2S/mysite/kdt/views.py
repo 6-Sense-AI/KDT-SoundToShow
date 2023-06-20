@@ -17,9 +17,32 @@ def index(request):
 def uploadFile(request):
     return render(request,'upload_file.html')
 
-def changeAudio(request): # 주파수 변환
-    current_directory = os.path.dirname(os.path.abspath(__file__)) # 현재 경로
-    wav_change_model.wave_change('success.mp3', 0.6, 25.08, os.path.join(current_directory,'media','origin'),os.path.join(current_directory,'media','change'))
+# def changeAudio(request): # 주파수 변환
+#     current_directory = os.path.dirname(os.path.abspath(__file__)) # 현재 경로
+#     wav_change_model.wave_change('success.mp3', 0.6, 25.08, os.path.join(current_directory,'media','origin'),os.path.join(current_directory,'media','change'))
+#     return render(request, 'audio.html')
+
+def changeAudio(request):
+    if request.method == 'POST':
+        # 선택된 주파수 값 가져와
+        selected_frequency = request.POST.get('num')
+
+        # 주파수에 따라 필요한 작업 수행
+        if selected_frequency:
+            current_directory = os.path.dirname(os.path.abspath(__file__))
+            origin_path = os.path.join(current_directory, 'media', 'origin')
+            change_path = os.path.join(current_directory, 'media', 'change')
+            
+            if selected_frequency == '1':   # 저주파 :20 ~ 1000
+                wav_change_model.wave_change('success.mp3', 0.3, 15, origin_path, change_path)
+            elif selected_frequency == '2': # 저주파 :20 ~ 2000
+                wav_change_model.wave_change('success.mp3', 0.3, 25.08, origin_path, change_path)
+            elif selected_frequency == '3': # 중음역 :500 ~ 3000
+                wav_change_model.wave_change('success.mp3', 7.5, 31, origin_path, change_path)
+            elif selected_frequency == '4': # 고주파 :1000 ~ 20000
+                wav_change_model.wave_change('success.mp3', 15, 58.57, origin_path, change_path)
+            elif selected_frequency == '5': # 고주파 :2000 ~ 20000
+                wav_change_model.wave_change('success.mp3', 25.08, 58.57, origin_path, change_path)
     return render(request, 'audio.html')
 
 # 파일 업로드
