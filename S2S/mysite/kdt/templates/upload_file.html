@@ -4,7 +4,53 @@
 {% block content %}
 <section class="app">
     <div class="container p-5 d-flex justify-content-center">
-        모드 선택하고, 파일 업로드하는 화면
-    </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="file">
+            <button type="submit">업로드</button>
+        </form>
+    <!-- 주파수 -->
+    <fieldset>
+        <legend>주파수</legend>
+        <p>
+            <label for="frequency">
+                <select name = "num", id="num">
+                    <option value="" selected disabled>-- 선택 --</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
+        <p>
+    </fieldset>
+    <!-- 입모양 생성 여부 -->
+    <fieldset>
+        <legend>입모양 생성 여부를 선택해주세요</legend>
+        <label>
+            <input type="radio" name="generate_mouth" value="yes">
+            생성
+        </label><br>
+        <label>
+            <input type="radio" name="generate_mouth" value="no">
+            생성하지 않음
+        </label><br>
+    </fieldset>
+    <!--텍스트 생성 여부 -->
+    <fieldset>
+        <legend>텍스트 생성 여부를 선택해주세요</legend>
+        <label>
+            <input type="radio" name="generate_text" value="yes">
+            생성
+        </label><br>
+        <label>
+            <input type="radio" name="generate_text" value="no">
+            생성하지 않음
+        </label><br>
+    </fieldset>
+        {% if message %}
+        <p>{{ message }}</p>
+{% endif %}
 </section>
 {% endblock %}
