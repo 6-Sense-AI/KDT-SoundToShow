@@ -1,21 +1,65 @@
+/*--------------------------------------------------------------
+# 글꼴
+--------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-/* font-family: KCC-Ganpan; */
-
-@font-face {
+/* @font-face {
   font-family: KCC-Ganpan;
   src: url('font/KCC-Ganpan.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+} */
+
+@font-face {
+  font-family: 'SebangGothic';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicRegular.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicRegular.eot?#iefix') format('embedded-opentype'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicRegular.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicRegular.woff') format('woff'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicRegular.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SebangGothicBold';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicBold.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicBold.eot?#iefix') format('embedded-opentype'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicBold.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicBold.woff') format('woff'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/sebang/SebangGothicBold.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTWanjudaedunsancheB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.btn, .content-bold {
+  font-family: 'SebangGothicBold';
 }
 
 h1, h2, h3, h4, h5, h6,
-label, a, li, p, div, pre, div, .form-select, .btn {
-  font-family: KCC-Ganpan;
+label, a, li, p, div, pre, div, .form-select{
+  /* font-family: KCC-Ganpan; */
+  font-family: 'SebangGothic';
 }
 
-.main-detail pre {
-  font-size: 20px;
+/*--------------------------------------------------------------
+# 메인화면 (index.html)
+--------------------------------------------------------------*/
+.main-detail div {
+  font-size: 25px;
+}
+
+.main-img-01 p {
+  font-size: 18px;
 }
 
 .app{
@@ -30,20 +74,22 @@ label, a, li, p, div, pre, div, .form-select, .btn {
 }
 
 .main-text-01 {
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
+  font-family: 'TTWanjudaedunsancheB';
   font-style: normal;
   font-weight: 700;
   font-size: 96px;
   line-height: 117px;
   /* identical to box height */
   text-align: center;
-  color: #AFB3C2;
-  text-shadow: 1px 1px 1px #FFFFFF;  
+  color: #9ea2af;
+  text-shadow: 2px 2px 2px #FFFFFF;  
 
 }
 
 .main-text-02 {
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
+  font-family: 'TTWanjudaedunsancheB';
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
@@ -52,9 +98,9 @@ label, a, li, p, div, pre, div, .form-select, .btn {
 
   text-align: center;
 
-  color: #BABECC;
+  color: #9ea2af;
 
-  text-shadow: 1px 1px 1px #FFFFFF;
+  text-shadow: 2px 2px 2px #FFFFFF;
 
 }
 
@@ -73,3 +119,7 @@ label, a, li, p, div, pre, div, .form-select, .btn {
   box-shadow:  26px 26px 52px #cacbce,
               -26px -26px 52px #ffffff;
 }
+
+/*--------------------------------------------------------------
+# 모드 선택 및 파일 업로드 화면 (upload_file.html)
+--------------------------------------------------------------*/
