@@ -53,13 +53,28 @@ def upload_file(request):
         uploaded_file = request.FILES['file']
         fs = FileSystemStorage(os.path.join(current_directory,'media','test'))
 
-        # 아이디 얻기
-        audio_id = Audio.objects.latest('id').id + 1 if Audio.objects.exists() else 1
+        # 주파수 저장
+        audio_id = Audio.objects.latest('id').id + 1 if Audio.objects.exists() else 1 # id 얻기
         filename = f"{audio_id}_{uploaded_file.name}"
         fs.save(filename, uploaded_file)
 
+        # 주파수 모드 선택 값 가져오기
+        num = request.POST.get('num')
+        print(num)
+        
+        # 입모양 생성 여부 값 가져오기
+        generate_mouth = request.POST.get('generate_mouth')
+        print(generate_mouth)
+        
+        # 텍스트 생성 여부 값 가져오기
+        generate_text = request.POST.get('generate_text')
+        print(generate_text)
+
         audio = Audio(id=audio_id, path=fs.path(filename)) #모델에 저장
         audio.save()
+
+
+
 
         message = '파일이 성공적으로 업로드되었습니다.'
         return render(request, 'upload_file.html', {'message': message})

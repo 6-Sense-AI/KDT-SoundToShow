@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-<section class="app upload-page portfolio" id="portfolio">
-    <div class="container py-3 portfolio-wrap">
+<section class="app upload-page">
+    <div class="container py-3">
 
         <div class="portfolio-info row my-5 d-flex justify-content-center">
 
@@ -16,7 +16,8 @@
                 고주파 5 : 2000~20000
             -->
             <div class="portfolio-links col-lg-3 main-detail mx-3 p-5">
-
+                <form method="POST">
+                    {% csrf_token %}
                 <legend class="content-bold mb-3">주파수 모드 선택</legend>
 
                 <a data-bs-toggle="modal" href="#portfolioModal" data-gallery="portfolioGallery"
@@ -79,20 +80,15 @@
 
         <div class="d-flex justify-content-center p-5">
             <div>
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
                     <div class="input-group">
                         <input type="file" name="file" class="form-control">
-                        <button type="submit" class="btn btn-outline-dark">업로드</button> 
                     </div>
-                    
-                </form>
-                
                 <div class="text-center">
                     {% if message %}
                         <p class="text-primary">{{ message }}</p>
                     {% endif %}
                 </div>
+                <button type="submit" class="btn btn-outline-dark">업로드</button> 
             </div>
         </div>
         
@@ -162,6 +158,7 @@
             </div>
         </div>     <!-- 반려동물 detail Modal창 End-->
 </section>
+</form>
 {% endblock %}
 
 {% block script %}
