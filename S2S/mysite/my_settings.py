@@ -16,4 +16,4 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-SECRET_KEY = "n/qplfbfaspe60cZkLSnZCCnkSmscgefMvCGNHBZvYo"
+SECRET_KEY = ""
