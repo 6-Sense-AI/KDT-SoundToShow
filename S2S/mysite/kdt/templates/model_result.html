@@ -2,10 +2,6 @@
 {% load static %}
 
 {% block content %}
-<h1>결과</h1>
-<p>선택된 주파수 모드: {{ num }}</p>
-<p>입모양 생성 여부: {{ generate_mouth }}</p>
-<p>텍스트 생성 여부: {{ generate_text }}</p>
     <section class="">
         <div class="container py-3">
             <div class="row my-5 d-flex justify-content-center">
@@ -16,8 +12,24 @@
                         아래에서 결과 영상/음원을 확인해보세요!
                     </p>
 
+                    <h5 class="content-bold">
+                        선택한 설정
+                    </h5>
+                    <div class="mt-3 mb-5">
+                        <p>
+                            {% if num == '1' %} 저주파 1 (20~1,000Hz) 음원
+                            {% elif num == '2' %} 저주파 2 (20~2,000Hz) 음원
+                            {% elif num == '3' %} 원본 음원
+                            {% elif num == '4' %} 고주파 1 (1,000~20,000Hz) 음원
+                            {% elif num == '5' %} 고주파 2 (2,000~20,000Hz) 음원
+                            {% endif %}
+                        </p>
+                        <p>입모양 생성{% if generate_mouth == "yes" %}함{% else %} 안함{% endif %}</p>
+                        <p>텍스트 생성{% if generate_text == "yes" %}함{% else %} 안함{% endif %}</p>
+                    </div>
+
                     <video class="justify-content-center main-detail " width="500" height="auto" controls>
-                        <source src="{% static "res/res_ex.mp4" %}" type="video/mp4">
+                        <source src="{% static "res/res_ex2.mp4" %}" type="video/mp4">
                         {% comment %} <source src="movie.ogg" type="video/ogg"> {% endcomment %}
                         브라우저에서 지원되는 포맷이 아닙니다.
                     </video>
