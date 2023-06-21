@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.index, name='main'),
     # path('upload', views.upload),
     path('kdt/',include('kdt.urls')),
 ]

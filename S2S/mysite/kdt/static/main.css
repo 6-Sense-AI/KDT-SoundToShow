@@ -64,7 +64,23 @@ label, a, li, p, div, pre, div, .form-select{
 
 .app{
   background-color: #E9ECF4;
-  }
+}
+
+.nav-text {
+  font-family: 'TTWanjudaedunsancheB';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 59px;
+  text-decoration: none;
+  /* identical to box height */
+  color: #9ea2af;
+  text-shadow: 2px 2px 2px #FFFFFF;
+}
+
+.nav-text:hover {
+  color: #0dcaf0;
+}
 
 .main-text{
   font-size: medium;
