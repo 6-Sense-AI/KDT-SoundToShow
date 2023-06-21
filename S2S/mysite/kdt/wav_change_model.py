@@ -5,7 +5,7 @@ import os
 
 # music : 음원 파일, st_mel : 시작 멜 단위(주파수로 기준), end_mel : 끝 멜 단위(주파수로 기준), input_dir : 음원파일 주소, output_dir : 저장할 경로
 
-def wave_change(music, st_mel, end_mel, input_dir, output_dir):
+def wave_change(input_name, output_name, st_mel, end_mel, input_dir, output_dir):
     print("wav_change_success")
     '''
     music : 음원 파일 이름
@@ -14,7 +14,7 @@ def wave_change(music, st_mel, end_mel, input_dir, output_dir):
     '''
 
     # 음악 파일을 로드합니다.
-    data,sr = librosa.load(f'{input_dir}\\{music}')
+    data,sr = librosa.load(f'{input_dir}\\{input_name}')
 
     S = librosa.feature.melspectrogram(y=data, sr=sr)
 
@@ -33,4 +33,4 @@ def wave_change(music, st_mel, end_mel, input_dir, output_dir):
     y_ = librosa.istft(S_)
 
     # 음원을 저장합니다.
-    sf.write(f'{output_dir}\\{music}', y_, samplerate=sr)
+    sf.write(f'{output_dir}\\{output_name}', y_, samplerate=sr)
