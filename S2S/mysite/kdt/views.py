@@ -21,15 +21,13 @@ def changeaudio(filename, selected_frequency):
             change_path = os.path.join(current_directory, 'media', 'sound','change')
             
             if selected_frequency == '1':   # 저주파 :20 ~ 1000
-                wav_change_model.wave_change(filename, "c"+filename, 0.3, 15, origin_path, change_path)
+                wav_change_model.wave_change(filename, "c1 "+filename, 0.3, 15, origin_path, change_path)
             elif selected_frequency == '2': # 저주파 :20 ~ 2000
-                wav_change_model.wave_change(filename, "c"+filename, 0.3, 25.08, origin_path, change_path)
-            elif selected_frequency == '3': # 중음역 :500 ~ 3000
-                wav_change_model.wave_change(filename, "c"+filename, 7.5, 31, origin_path, change_path)
+                wav_change_model.wave_change(filename, "c2 "+filename, 0.3, 25.08, origin_path, change_path)
             elif selected_frequency == '4': # 고주파 :1000 ~ 20000
-                wav_change_model.wave_change(filename, "c"+filename, 15, 58.57, origin_path, change_path)
+                wav_change_model.wave_change(filename, "c4 "+filename, 15, 58.57, origin_path, change_path)
             elif selected_frequency == '5': # 고주파 :2000 ~ 20000
-                wav_change_model.wave_change(filename, "c"+filename, 25.08, 58.57, origin_path, change_path)
+                wav_change_model.wave_change(filename, "c5 "+filename, 25.08, 58.57, origin_path, change_path)
     return 1
 
 # 파일 업로드
@@ -49,7 +47,10 @@ def upload_file(request):
         # 주파수 모드
         num = request.POST.get('num')
         print(num)
-        print(changeaudio(filename,num)) # 파일 생성
+        if num == '3': # 원본
+            fs = FileSystemStorage(os.path.join(current_directory,'media','sound','change'))
+            fs.save("c3 "+filename,uploaded_file)
+        else : print(changeaudio(filename,num)) # 파일 생성
         
         # 입모양 생성 여부
         generate_mouth = request.POST.get('generate_mouth')
