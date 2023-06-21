@@ -11,7 +11,12 @@
 </head>
 
 <body class="app">
-    <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+    <div class="d-flex justify-content-between mx-4">
+        <a href={% url "main" %} class="nav-text"><i class="bi bi-house"></i> HOME</a>
+        <a href={% url "kdt:uploadfile" %} class="nav-text align-self-end"><i class="bi bi-play"></i> START</a>
+
+    </div>
+    
     <section>
         <div class="container mt-5">
     
@@ -24,7 +29,7 @@
 
         </div>
     </section>
-
+    <!-- 기본 템플릿 안에 삽입될 내용 Start -->
     {% block content %}
     {% endblock %}
     <!-- 기본 템플릿 안에 삽입될 내용 End -->
