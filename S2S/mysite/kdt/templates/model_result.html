@@ -31,18 +31,19 @@
                 </div>
 
                 <div class="col-lg-6 mx-3 p-5">
-
-                    <video class="justify-content-center main-detail " width="400" height="auto" controls>
-                        <source src="{% static "res/res_ex2.mp4" %}" type="video/mp4">
-                        {% comment %} <source src="movie.ogg" type="video/ogg"> {% endcomment %}
-                        브라우저에서 지원되는 포맷이 아닙니다.
-                    </video>
-
-                    <audio class="justify-content-center mt-5" style="width:400" controls>
-                        <source src="{% static "audio/한국어예시_원본.mp3" %}" type="audio/mpeg">
-                        브라우저에서 지원되는 포맷이 아닙니다.
-                    </audio>
-                      
+                    {% if generate_mouth == 'yes' or generate_text == 'yes'%}
+                        <video class="justify-content-center main-detail " width="400" height="auto" controls>
+                            <source src="{% static "res/res_ex2.mp4" %}" type="video/mp4">
+                            {% comment %} <source src="movie.ogg" type="video/ogg"> {% endcomment %}
+                            브라우저에서 지원되는 포맷이 아닙니다.
+                        </video>
+                    {% endif %}
+                    {% if generate_mouth == 'no' and generate_text == 'no' %}
+                        <audio class="justify-content-center mt-5" style="width:400" controls>
+                            <source src="{% static "audio/한국어예시_원본.mp3" %}" type="audio/mpeg">
+                            브라우저에서 지원되는 포맷이 아닙니다.
+                        </audio>
+                    {% endif %}
                 </div>
             </div>
         </div>
