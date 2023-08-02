@@ -19,6 +19,7 @@ KDT 해커톤 4회 식스센스 팀 S2S 프로젝트: 경증 청각장애인을 
 |구분|내용|
 |------|---|
 |사용언어|Python / HTML / CSS / JavaScript|
+|사용한 라이브러리|Librosa / PyTorch|
 |개발도구|VisualStudioCode / Jupyter / Google Colab|
 |데이터베이스|MySQL|
 
