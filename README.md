@@ -53,7 +53,8 @@ KDT 해커톤 4회 식스센스 팀 S2S 프로젝트: 경증 청각장애인을 
 ![결과](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/87457244/91e20b10-8379-469e-bed0-c486813a07f1)
 
 ## 7. 제작 일정
-![image](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/105771134/7b271639-7b98-4edf-a185-14f18526063e)
+![image](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/105771134/d631e655-0ce1-4757-9735-4cfa6ea0d120)
+
 
 ## 8. 팀원 소개 및 담당 업무
 ![image](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/105771134/ac6b458e-76eb-4985-9dd1-20029a810a19)
