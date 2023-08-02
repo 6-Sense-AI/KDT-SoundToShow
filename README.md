@@ -24,7 +24,13 @@ KDT 해커톤 4회 식스센스 팀 S2S 프로젝트: 경증 청각장애인을 
 |데이터베이스|MySQL|
 
 ## 4. 아키텍처(구조)
+> ####  시스템 아키텍쳐
 ![시스템 아키텍쳐](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/81418633/6553dd16-ff09-4cc4-99f4-5aed0994ac29)
+
+## 5. 흐름도
+> ####  서비스 흐름도 ['영어 듣기 평가 시험' 사례에 서비스 적용을 가정]
+
+![기능흐름도](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/81418633/0b2ebf0c-e2f5-4787-9317-d0bbe77decad)
 
 
 ## 6. 서비스 실행 화면
