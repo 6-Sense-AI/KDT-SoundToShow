@@ -1,4 +1,7 @@
+![s2s (1)](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/81418633/cf46a07e-1aca-411b-a79c-44f663e65c28)
+
 # KDT-SoundToShow
+
 KDT 해커톤 4회 식스센스 팀 S2S 프로젝트: 경증 청각장애인을 위한 듣기 평가 보조 서비스
 
 ## 1. 프로젝트명
