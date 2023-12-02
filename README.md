@@ -1,4 +1,4 @@
-![s2s (1)](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/81418633/cf46a07e-1aca-411b-a79c-44f663e65c28)
+![s2s (2)](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/81418633/60174a33-d9c5-43d7-a358-fa0c358b4d8e)
 
 # KDT-SoundToShow
 
