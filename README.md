@@ -1,4 +1,6 @@
-![s2s (2)](https://github.com/6-Sense-AI/KDT-SoundToShow/assets/81418633/60174a33-d9c5-43d7-a358-fa0c358b4d8e)
+<div align='center'>
+  <img src="https://github.com/6-Sense-AI/KDT-SoundToShow/assets/81418633/60174a33-d9c5-43d7-a358-fa0c358b4d8e" alt="s2s thumbnail" width="400px"/>
+</div>
 
 # KDT-SoundToShow
 
